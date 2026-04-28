@@ -162,11 +162,11 @@ export default function Hero() {
 
             {/* Stats */}
             <div
-              className="flex gap-5 sm:gap-8 mt-7 sm:mt-12 lg:mt-14 pt-5 sm:pt-8 border-t border-[rgba(201,169,110,0.1)] justify-center sm:justify-start"
+              className="flex gap-5 sm:gap-8 mt-7 sm:mt-12 lg:mt-14 pt-5 sm:pt-8 border-t border-[rgba(201,169,110,0.1)]"
               style={anim("0.62s")}
             >
               {h.stats.map(stat => (
-                <div key={stat.label} className="flex flex-col items-center sm:items-start">
+                <div key={stat.label} className="flex flex-col">
                   <span
                     className="text-lg sm:text-2xl font-light text-[#C9A96E]"
                     style={{ fontFamily: "var(--font-heading)" }}
