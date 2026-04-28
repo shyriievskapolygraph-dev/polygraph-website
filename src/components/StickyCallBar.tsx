@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { PHONE, PHONE_DISPLAY } from "@/lib/seo";
 import { useLanguage } from "@/lib/LanguageContext";
+import { pushEvent } from "@/lib/gtm";
 
 export default function StickyCallBar() {
   const [visible, setVisible] = useState(false);
@@ -32,6 +33,7 @@ export default function StickyCallBar() {
         {/* Call button — primary */}
         <a
           href={`tel:${PHONE}`}
+          onClick={() => pushEvent("phone_click", { location: "sticky_bar" })}
           className="flex-1 flex items-center justify-center gap-2.5 bg-[#C9A96E] active:bg-[#B8944E] transition-colors duration-150"
           style={{ fontFamily: "var(--font-body)" }}
         >
@@ -51,6 +53,7 @@ export default function StickyCallBar() {
           href={`https://wa.me/${PHONE}`}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => pushEvent("whatsapp_click", { location: "sticky_bar" })}
           className="w-14 flex items-center justify-center text-[#C9A96E] active:text-[#F5F0EB] transition-colors duration-150"
           aria-label="WhatsApp"
         >
@@ -67,6 +70,7 @@ export default function StickyCallBar() {
           href={`https://t.me/+${PHONE}`}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => pushEvent("telegram_click", { location: "sticky_bar" })}
           className="w-14 flex items-center justify-center text-[#C9A96E] active:text-[#F5F0EB] transition-colors duration-150"
           aria-label="Telegram"
         >

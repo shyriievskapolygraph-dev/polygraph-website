@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "@/lib/LanguageContext";
+import { pushEvent } from "@/lib/gtm";
 
 const socials = [
   {
@@ -114,6 +115,7 @@ export default function Contacts() {
                     key={s.name}
                     href={s.href}
                     aria-label={s.name}
+                    onClick={() => pushEvent(`${s.name.toLowerCase()}_click`, { location: "contacts" })}
                     className="group w-11 h-11 flex items-center justify-center border border-[rgba(42,42,42,0.15)] hover:border-[#C9A96E] text-[#8A7E74] hover:text-[#C9A96E] transition-all duration-300 hover:bg-[rgba(201,169,110,0.06)]"
                   >
                     {s.icon}

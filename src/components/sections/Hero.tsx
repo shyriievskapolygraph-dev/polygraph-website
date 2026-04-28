@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { PHONE, PHONE_DISPLAY } from "@/lib/seo";
+import { pushEvent } from "@/lib/gtm";
 
 export default function Hero() {
   const [visible, setVisible] = useState(false);
@@ -130,6 +131,7 @@ export default function Hero() {
               {/* Tap-to-call — mobile only */}
               <a
                 href={`tel:${PHONE}`}
+                onClick={() => pushEvent("phone_click", { location: "hero" })}
                 className="lg:hidden group px-7 py-4 bg-[#C9A96E] hover:bg-[#B8944E] text-[#2A2A2A] text-[14px] tracking-[0.18em] uppercase font-medium transition-all duration-300 flex items-center justify-center gap-3 w-full relative overflow-hidden"
                 style={{ fontFamily: "var(--font-body)" }}
               >

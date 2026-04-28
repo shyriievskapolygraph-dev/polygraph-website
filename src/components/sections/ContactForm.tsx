@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "@/lib/LanguageContext";
+import { pushEvent } from "@/lib/gtm";
 
 type Field = "name" | "phone" | "message";
 
@@ -34,6 +35,7 @@ export default function ContactForm() {
         body: JSON.stringify(values),
       });
       if (!res.ok) throw new Error("send failed");
+      pushEvent("generate_lead", { method: "contact_form" });
       setSubmitted(true);
     } catch {
       alert("Помилка відправки. Будь ласка, зателефонуйте напряму.");
