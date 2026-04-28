@@ -389,7 +389,7 @@ export default function Services() {
           >
             <div className="h-[2px] bg-gradient-to-r from-transparent via-[#C9A96E] to-transparent" />
 
-            <div className="p-5 sm:p-9 lg:p-10">
+            <div className="p-5 pb-24 sm:p-9 lg:p-10">
 
               <button onClick={() => setActiveService(null)} className="absolute top-3 right-3 w-11 h-11 flex items-center justify-center text-[#5A5248] hover:text-[#F5F0EB] transition-colors duration-200" aria-label="Закрити">
                 <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
