@@ -156,6 +156,7 @@ export default function Contacts() {
                     {item.href ? (
                       <a
                         href={item.href}
+                        onClick={() => item.href?.startsWith("tel:") && pushEvent("phone_click", { location: "contacts" })}
                         className="block font-light text-[#2A2A2A] hover:text-[#C9A96E] transition-colors duration-300 leading-tight mb-1"
                         style={{
                           fontFamily: "var(--font-heading)",
