@@ -1,4 +1,4 @@
-export const SITE_URL = "https://irinapolygraph.com.ua";
+export const SITE_URL = "https://shyriievska.com.ua";
 export const SITE_NAME = "Ірина Ширієвська — Поліграфолог у Києві";
 export const SPECIALIST_NAME = "Ірина Ширієвська";
 export const PHONE = "+380632429890";
