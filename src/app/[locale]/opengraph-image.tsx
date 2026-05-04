@@ -17,9 +17,9 @@ export default async function OgImage({ params }: Props) {
     ? "Профессиональные полиграфные исследования для бизнеса и частных клиентов"
     : "Професійні поліграфні дослідження для бізнесу та приватних клієнтів";
   const stats = [
-    { value: "11+",  label: isRu ? "лет практики"   : "років практики" },
-    { value: "500+", label: isRu ? "исследований"   : "досліджень" },
-    { value: "100%", label: isRu ? "конфиденциально" : "конфіденційно" },
+    { value: "2+",    label: isRu ? "лет практики"   : "роки практики" },
+    { value: "1000+", label: isRu ? "исследований"   : "досліджень" },
+    { value: "100%",  label: isRu ? "конфиденциально" : "конфіденційно" },
   ];
 
   return new ImageResponse(
@@ -59,7 +59,7 @@ export default async function OgImage({ params }: Props) {
             </span>
           </div>
           <span style={{ color: "rgba(201,169,110,0.35)", fontSize: "15px", letterSpacing: "0.18em" }}>
-            irinapolygraph.com.ua
+            shyriievska.com.ua
           </span>
         </div>
 

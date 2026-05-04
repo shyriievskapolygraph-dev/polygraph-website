@@ -14,7 +14,7 @@ export async function POST(request: Request) {
     `📞 <b>Телефон:</b> ${phone.trim()}`,
   ];
   if (message?.trim()) lines.push(`💬 <b>Запит:</b> ${message.trim()}`);
-  lines.push("", `🌐 irinapolygraph.com.ua`);
+  lines.push("", `🌐 shyriievska.com.ua`);
 
   const res = await fetch(
     `https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`,
