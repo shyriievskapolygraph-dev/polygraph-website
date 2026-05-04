@@ -12,9 +12,23 @@ export default function ContactForm() {
   const [values,    setValues]    = useState({ name: "", phone: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
   const [loading,   setLoading]   = useState(false);
+  const [errors,    setErrors]    = useState({ name: "", phone: "" });
+  const [touched,   setTouched]   = useState({ name: false, phone: false });
   const ref = useRef<HTMLElement>(null);
   const { t } = useLanguage();
   const cf = t.contactForm;
+
+  const validateName = (val: string): string => {
+    const trimmed = val.trim();
+    if (trimmed.length < 2) return cf.errNameShort;
+    if (!/^[\p{L}\s'’\-]+$/u.test(trimmed)) return cf.errNameInvalid;
+    return "";
+  };
+
+  const validatePhone = (val: string): string => {
+    if (val.replace(/\D/g, "").length < 10) return cf.errPhoneShort;
+    return "";
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -27,6 +41,11 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const nameErr = validateName(values.name);
+    const phoneErr = validatePhone(values.phone);
+    setTouched({ name: true, phone: true });
+    setErrors({ name: nameErr, phone: phoneErr });
+    if (nameErr || phoneErr) return;
     setLoading(true);
     try {
       const res = await fetch("/api/contact", {
@@ -177,9 +196,16 @@ export default function ContactForm() {
                     type="text"
                     required
                     value={values.name}
-                    onChange={e => setValues(v => ({ ...v, name: e.target.value }))}
+                    onChange={e => {
+                      setValues(v => ({ ...v, name: e.target.value }));
+                      if (touched.name) setErrors(er => ({ ...er, name: validateName(e.target.value) }));
+                    }}
                     onFocus={() => setFocused("name")}
-                    onBlur={() => setFocused(null)}
+                    onBlur={() => {
+                      setFocused(null);
+                      setTouched(prev => ({ ...prev, name: true }));
+                      setErrors(er => ({ ...er, name: validateName(values.name) }));
+                    }}
                     className={inputClass("name")}
                     style={{ fontFamily: "var(--font-body)" }}
                     suppressHydrationWarning
@@ -189,6 +215,11 @@ export default function ContactForm() {
                     style={{ width: focused === "name" ? "100%" : "0%" }}
                   />
                 </div>
+                {touched.name && errors.name && (
+                  <p className="text-[12px] text-[#C9A96E] font-light mt-1.5" style={{ fontFamily: "var(--font-body)" }}>
+                    {errors.name}
+                  </p>
+                )}
 
                 {/* Phone */}
                 <div className="relative border-b border-[rgba(255,255,255,0.1)] mb-2 mt-6">
@@ -211,9 +242,17 @@ export default function ContactForm() {
                     autoComplete="tel"
                     required
                     value={values.phone}
-                    onChange={e => setValues(v => ({ ...v, phone: e.target.value }))}
+                    onChange={e => {
+                      const filtered = e.target.value.replace(/[^\d+\s()\-]/g, "");
+                      setValues(v => ({ ...v, phone: filtered }));
+                      if (touched.phone) setErrors(er => ({ ...er, phone: validatePhone(filtered) }));
+                    }}
                     onFocus={() => setFocused("phone")}
-                    onBlur={() => setFocused(null)}
+                    onBlur={() => {
+                      setFocused(null);
+                      setTouched(prev => ({ ...prev, phone: true }));
+                      setErrors(er => ({ ...er, phone: validatePhone(values.phone) }));
+                    }}
                     className={inputClass("phone")}
                     style={{ fontFamily: "var(--font-body)" }}
                     suppressHydrationWarning
@@ -223,6 +262,11 @@ export default function ContactForm() {
                     style={{ width: focused === "phone" ? "100%" : "0%" }}
                   />
                 </div>
+                {touched.phone && errors.phone && (
+                  <p className="text-[12px] text-[#C9A96E] font-light mt-1.5" style={{ fontFamily: "var(--font-body)" }}>
+                    {errors.phone}
+                  </p>
+                )}
 
                 {/* Message */}
                 <div className="relative border-b border-[rgba(255,255,255,0.1)] mb-2 mt-6">
