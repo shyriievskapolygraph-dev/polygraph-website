@@ -57,6 +57,41 @@ h1.font-light, h2.font-light, h3.font-light {
 ::-webkit-scrollbar-track { background: var(--bg-dark); }
 ::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 3px; }
 
+/* Hero background — CSS media query so the browser picks the right image
+   immediately without waiting for JS. Mobile loads hero-mobile.webp,
+   desktop loads bg-hero-n.webp. */
+.hero-section {
+  background-color: #2A2A2A;
+  background-image: url('/hero-mobile.webp');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 1024px) {
+  .hero-section {
+    background-image: url('/bg-hero-n.webp');
+    background-size: contain;
+    background-position: center;
+  }
+}
+
+.about-section {
+  background-color: #2A2A2A;
+  background-image: url('/hero-mobile.webp');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 1024px) {
+  .about-section {
+    background-image: url('/bg-hero-n.webp');
+    background-size: contain;
+    background-position: center;
+  }
+}
+
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }

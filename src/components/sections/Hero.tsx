@@ -7,16 +7,8 @@ import { pushEvent } from "@/lib/gtm";
 
 export default function Hero() {
   const [visible, setVisible] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
   const { t } = useLanguage();
   const h = t.hero;
-
-  useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 1024);
-    check();
-    window.addEventListener("resize", check);
-    return () => window.removeEventListener("resize", check);
-  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => setVisible(true), 100);
@@ -35,14 +27,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative overflow-hidden min-h-screen"
-      style={{
-        backgroundColor: "#2A2A2A",
-        backgroundImage: isMobile ? "url('/hero-mobile.png')" : "url('/bg-hero-n.png')",
-        backgroundSize: isMobile ? "cover" : "contain",
-        backgroundPosition: isMobile ? "center top" : "center",
-        backgroundRepeat: "no-repeat",
-      }}
+      className="hero-section relative overflow-hidden min-h-screen"
     >
       {/* ── MOBILE gradient veil — image visible top, text readable bottom ── */}
       <div

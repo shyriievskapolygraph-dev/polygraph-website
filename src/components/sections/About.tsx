@@ -5,16 +5,8 @@ import { useLanguage } from "@/lib/LanguageContext";
 
 export default function About() {
   const [visible, setVisible] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
   const { t } = useLanguage();
   const a = t.about;
-
-  useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 1024);
-    check();
-    window.addEventListener("resize", check);
-    return () => window.removeEventListener("resize", check);
-  }, []);
 
   useEffect(() => {
     const t = setTimeout(() => setVisible(true), 100);
@@ -30,14 +22,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative overflow-hidden min-h-screen"
-      style={{
-        backgroundColor: "#2A2A2A",
-        backgroundImage: isMobile ? "url('/hero-mobile.png')" : "url('/bg-hero-n.png')",
-        backgroundSize: isMobile ? "cover" : "contain",
-        backgroundPosition: isMobile ? "center top" : "center",
-        backgroundRepeat: "no-repeat",
-      }}
+      className="about-section relative overflow-hidden min-h-screen"
     >
       {/* Mobile gradient veil */}
       <div

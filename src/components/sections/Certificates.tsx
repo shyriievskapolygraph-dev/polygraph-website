@@ -5,25 +5,25 @@ import Image from "next/image";
 
 const certificates = [
   {
-    src: "/images/about/1.jpg",
+    src: "/images/about/1.webp",
     num: "01",
     label: "Диплом магістра психології",
     sub: "Державна кваліфікація",
   },
   {
-    src: "/images/about/2.jpg",
+    src: "/images/about/2.webp",
     num: "02",
     label: "Диплом магістра психології",
     sub: "Підтверджена освіта",
   },
   {
-    src: "/images/about/3.jpg",
+    src: "/images/about/3.webp",
     num: "03",
     label: "Сертифікат поліграфолога",
     sub: "Підвищення кваліфікації",
   },
   {
-    src: "/images/about/4.jpg",
+    src: "/images/about/4.webp",
     num: "04",
     label: "Свідоцтво поліграфолога",
     sub: "Психофізіологічні дослідження",
