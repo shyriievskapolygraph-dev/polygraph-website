@@ -48,6 +48,7 @@ export const metadata: Metadata = {
     "geo.placename": "Київ",
     "geo.position": "50.4501;30.5234",
     ICBM: "50.4501, 30.5234",
+    "msvalidate.01": "037C80FF06FE508DD26AC05DC793E357",
   },
 };
 
