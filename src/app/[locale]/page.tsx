@@ -12,7 +12,7 @@ import JsonLd from "@/components/JsonLd";
 import {
   SITE_URL, SITE_NAME, SPECIALIST_NAME,
   PHONE, EMAIL, GEO_LAT, GEO_LNG,
-  PRICE_RANGE, OPENING_HOURS,
+  PRICE_RANGE, OPENING_HOURS, TELEGRAM_URL,
 } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -133,7 +133,7 @@ export default async function HomePage({ params }: Props) {
     },
     sameAs: [
       "https://www.instagram.com/iryna_polygraph",
-      "https://t.me/+380632429890",
+      TELEGRAM_URL,
     ],
     hasOfferCatalog: {
       "@type": "OfferCatalog",

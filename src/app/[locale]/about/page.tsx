@@ -5,7 +5,7 @@ import Certificates from "@/components/sections/Certificates";
 import ContactForm from "@/components/sections/ContactForm";
 import Footer from "@/components/layout/Footer";
 import JsonLd from "@/components/JsonLd";
-import { SITE_URL, SPECIALIST_NAME, PHONE, EMAIL } from "@/lib/seo";
+import { SITE_URL, SPECIALIST_NAME, PHONE, EMAIL, TELEGRAM_URL } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -86,7 +86,7 @@ export default async function AboutPage({ params }: Props) {
       : ["Поліграфологія", "Психофізіологічні дослідження", "Перевірка персоналу", "Службові розслідування"],
     sameAs: [
       "https://www.instagram.com/iryna_polygraph",
-      "https://t.me/+380632429890",
+      TELEGRAM_URL,
     ],
   };
 

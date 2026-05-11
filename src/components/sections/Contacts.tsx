@@ -3,11 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { pushEvent } from "@/lib/gtm";
+import { TELEGRAM_URL } from "@/lib/seo";
 
 const socials = [
   {
     name: "Telegram",
-    href: "https://t.me/+380632429890",
+    href: TELEGRAM_URL,
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="m22 3-8.97 5.97M22 3 2 10l7 3m13-10-4 18-6-5M9 13l3 5 4-8" />

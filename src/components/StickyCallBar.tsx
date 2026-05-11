@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { PHONE, PHONE_DISPLAY } from "@/lib/seo";
+import { PHONE, PHONE_DISPLAY, TELEGRAM_URL } from "@/lib/seo";
 import { useLanguage } from "@/lib/LanguageContext";
 import { pushEvent } from "@/lib/gtm";
 
@@ -67,7 +67,7 @@ export default function StickyCallBar() {
 
         {/* Telegram */}
         <a
-          href={`https://t.me/+${PHONE}`}
+          href={TELEGRAM_URL}
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => pushEvent("telegram_click", { location: "sticky_bar" })}
