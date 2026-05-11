@@ -28,10 +28,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: {
-    default: "Поліграфолог у Києві — Ірина Ширієвська",
-    template: "%s | Поліграфолог Ірина Ширієвська",
-  },
+  title: "Поліграфолог у Києві — Ірина Ширієвська",
   description:
     "Сертифікований поліграфолог у Києві з досвідом 11+ років. Перевірка персоналу, службові розслідування, приватні запити.",
   robots: {

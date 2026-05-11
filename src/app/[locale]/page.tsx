@@ -103,7 +103,7 @@ export default async function HomePage({ params }: Props) {
     email: EMAIL,
     priceRange: PRICE_RANGE,
     openingHours: OPENING_HOURS,
-    image: `${SITE_URL}/og-image.jpg`,
+    image: `${SITE_URL}/${locale}/opengraph-image`,
     address: {
       "@type": "PostalAddress",
       addressLocality: isRu ? "Киев" : "Київ",

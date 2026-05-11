@@ -38,20 +38,16 @@ export default function Footer() {
           <a
             href={`/${locale}`}
             onClick={e => { e.preventDefault(); go(`/${locale}`, false); }}
-            className="group flex flex-col leading-tight shrink-0"
+            className="group shrink-0 flex items-center"
+            aria-label={locale === "ru" ? "Ирина Шириевская — Полиграфолог" : "Ірина Ширієвська — Поліграфолог"}
           >
-            <span
-              className="text-[18px] font-light tracking-[0.15em] text-[#C8BFB5] group-hover:text-[#C9A96E] transition-colors duration-300"
-              style={{ fontFamily: "var(--font-heading)" }}
-            >
-              І. Ширієвська
-            </span>
-            <span
-              className="text-[9px] tracking-[0.3em] text-[#C9A96E] uppercase font-light"
-              style={{ fontFamily: "var(--font-body)" }}
-            >
-              {locale === "ru" ? "Полиграфолог" : "Поліграфолог"}
-            </span>
+            <img
+              src="/logo_header.png"
+              alt={locale === "ru" ? "Ирина Шириевская — Полиграфолог" : "Ірина Ширієвська — Поліграфолог"}
+              width={768}
+              height={125}
+              className="h-9 w-auto opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+            />
           </a>
 
           {/* Nav */}

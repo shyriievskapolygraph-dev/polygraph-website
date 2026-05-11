@@ -53,9 +53,9 @@ export default function ContactForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),
       });
-      pushEvent("generate_lead", { method: "contact_form" });
       if (!res.ok) throw new Error("send failed");
       setSubmitted(true);
+      pushEvent("generate_lead", { method: "contact_form" });
     } catch {
       alert("Помилка відправки. Будь ласка, зателефонуйте напряму.");
     } finally {

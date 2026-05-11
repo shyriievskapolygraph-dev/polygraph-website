@@ -391,7 +391,7 @@ export default function Services() {
 
             <div className="p-5 pb-24 sm:p-9 lg:p-10">
 
-              <button onClick={() => setActiveService(null)} className="absolute top-3 right-3 w-11 h-11 flex items-center justify-center text-[#5A5248] hover:text-[#F5F0EB] transition-colors duration-200" aria-label="Закрити">
+              <button onClick={() => setActiveService(null)} className="absolute top-3 right-3 w-11 h-11 flex items-center justify-center text-[#5A5248] hover:text-[#F5F0EB] transition-colors duration-200" aria-label={t.nav.closeModal}>
                 <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
                   <line x1="1" y1="1" x2="14" y2="14" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
                   <line x1="14" y1="1" x2="1" y2="14" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />

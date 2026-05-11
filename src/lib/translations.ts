@@ -24,6 +24,9 @@ const ua = {
     contacts: "Контакти",
     cta: "Консультація",
     ctaFull: "Отримати консультацію",
+    openMenu: "Відкрити меню",
+    closeMenu: "Закрити меню",
+    closeModal: "Закрити",
   },
 
   hero: {
@@ -402,6 +405,9 @@ const ru = {
     contacts: "Контакты",
     cta: "Консультация",
     ctaFull: "Получить консультацию",
+    openMenu: "Открыть меню",
+    closeMenu: "Закрыть меню",
+    closeModal: "Закрыть",
   },
 
   hero: {

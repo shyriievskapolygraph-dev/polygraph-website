@@ -1,5 +1,8 @@
 import { NextResponse } from "next/server";
 
+const escapeHtml = (s: string) =>
+  s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
 export async function POST(request: Request) {
   const { name, phone, message } = await request.json();
 
@@ -10,10 +13,10 @@ export async function POST(request: Request) {
   const lines = [
     "🔔 <b>Нова заявка з сайту</b>",
     "",
-    `👤 <b>Ім'я:</b> ${name.trim()}`,
-    `📞 <b>Телефон:</b> ${phone.trim()}`,
+    `👤 <b>Ім'я:</b> ${escapeHtml(name.trim())}`,
+    `📞 <b>Телефон:</b> ${escapeHtml(phone.trim())}`,
   ];
-  if (message?.trim()) lines.push(`💬 <b>Запит:</b> ${message.trim()}`);
+  if (message?.trim()) lines.push(`💬 <b>Запит:</b> ${escapeHtml(message.trim())}`);
   lines.push("", `🌐 shyriievska.com.ua`);
 
   const res = await fetch(

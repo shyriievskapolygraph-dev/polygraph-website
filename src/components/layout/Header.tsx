@@ -81,24 +81,20 @@ export default function Header() {
           <a
             href={`/${locale}`}
             onClick={e => { e.preventDefault(); go(`/${locale}`, false); }}
-            className="flex flex-col leading-tight group shrink-0"
+            className="group shrink-0 flex items-center"
+            aria-label={lang === "ua" ? "Ірина Ширієвська — Поліграфолог" : "Ирина Шириевская — Полиграфолог"}
           >
-            <span
-              className="text-[18px] sm:text-[22px] font-light tracking-[0.12em] sm:tracking-[0.15em] text-[#F5F0EB] group-hover:text-[#C9A96E] transition-colors duration-300"
-              style={{ fontFamily: "var(--font-heading)" }}
-            >
-              І. Ширієвська
-            </span>
-            <span
-              className="text-[9px] sm:text-[10px] tracking-[0.25em] sm:tracking-[0.3em] text-[#C9A96E] uppercase font-light"
-              style={{ fontFamily: "var(--font-body)" }}
-            >
-              {lang === "ua" ? "Поліграфолог" : "Полиграфолог"}
-            </span>
+            <img
+              src="/logo_header.png"
+              alt={lang === "ua" ? "Ірина Ширієвська — Поліграфолог" : "Ирина Шириевская — Полиграфолог"}
+              width={768}
+              height={125}
+              className="h-9 sm:h-11 w-auto opacity-95 group-hover:opacity-100 transition-opacity duration-300"
+            />
           </a>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-8 -translate-y-[3px]">
             {navItems.map(item => (
               <a
                 key={item.href}
@@ -125,12 +121,12 @@ export default function Header() {
           </nav>
 
           {/* Mobile right: lang + burger */}
-          <div className="flex items-center gap-3 lg:hidden">
+          <div className="flex items-center gap-3 lg:hidden -translate-y-[2px]">
             <LangToggle mobile />
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               className="flex flex-col justify-center items-center gap-[5px] w-11 h-11 -mr-1.5"
-              aria-label={menuOpen ? "Закрити меню" : "Відкрити меню"}
+              aria-label={menuOpen ? t.nav.closeMenu : t.nav.openMenu}
             >
               <span className={`block h-px bg-[#C9A96E] transition-all duration-300 origin-center ${menuOpen ? "w-6 rotate-45 translate-y-[6px]" : "w-6"}`} />
               <span className={`block h-px bg-[#C9A96E] transition-all duration-300 ${menuOpen ? "w-0 opacity-0" : "w-4"}`} />
