@@ -8,7 +8,7 @@ export const CITY = "Київ";
 export const COUNTRY = "UA";
 export const GEO_LAT = 50.4501;
 export const GEO_LNG = 30.5234;
-export const PRICE_RANGE = "3500–6000 UAH";
+export const PRICE_RANGE = "2200–4500 UAH";
 export const OPENING_HOURS = "Mo-Fr 09:00-19:00";
 
 export const TELEGRAM_USERNAME = "shyriievska";

@@ -139,10 +139,10 @@ export default async function HomePage({ params }: Props) {
       "@type": "OfferCatalog",
       name: isRu ? "Полиграфные исследования" : "Поліграфні дослідження",
       itemListElement: [
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: isRu ? "Проверка кандидатов при трудоустройстве" : "Перевірка кандидатів при працевлаштуванні" }, price: "3500", priceCurrency: "UAH" },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: isRu ? "Проверка действующего персонала" : "Перевірка діючого персоналу" }, price: "3500", priceCurrency: "UAH" },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: isRu ? "Служебные расследования" : "Службові розслідування" }, price: "5000", priceCurrency: "UAH" },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: isRu ? "Частные запросы" : "Приватні запити" }, price: "5000", priceCurrency: "UAH" },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: isRu ? "Проверка кандидатов при трудоустройстве" : "Перевірка кандидатів при працевлаштуванні" }, price: "2200", priceCurrency: "UAH" },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: isRu ? "Проверка действующего персонала" : "Перевірка діючого персоналу" }, price: "2200", priceCurrency: "UAH" },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: isRu ? "Служебные расследования" : "Службові розслідування" }, price: "4000", priceCurrency: "UAH" },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: isRu ? "Частные запросы" : "Приватні запити" }, price: "3500", priceCurrency: "UAH" },
       ],
     },
   };
@@ -159,7 +159,7 @@ export default async function HomePage({ params }: Props) {
       {
         "@type": "Question",
         name: "Сколько стоит полиграфное исследование в Киеве?",
-        acceptedAnswer: { "@type": "Answer", text: "Стоимость полиграфных исследований у Ирины Шириевской — от 3 500 до 6 000 грн в зависимости от вида исследования. Проверка персонала от 3 500 грн, ТОП-менеджеры и сложные расследования до 6 000 грн." },
+        acceptedAnswer: { "@type": "Answer", text: "Стоимость полиграфных исследований у Ирины Шириевской — от 2 200 до 4 500 грн в зависимости от вида исследования. Проверка персонала от 2 200 грн, ТОП-менеджеры и служебные расследования 4 000 грн, запросы супружеской верности 4 500 грн." },
       },
       {
         "@type": "Question",
@@ -190,7 +190,7 @@ export default async function HomePage({ params }: Props) {
       {
         "@type": "Question",
         name: "Скільки коштує поліграфне дослідження у Києві?",
-        acceptedAnswer: { "@type": "Answer", text: "Вартість поліграфних досліджень у Ірини Ширієвської — від 3 500 до 6 000 грн залежно від виду дослідження. Перевірка персоналу від 3 500 грн, ТОП-менеджери та складні розслідування до 6 000 грн." },
+        acceptedAnswer: { "@type": "Answer", text: "Вартість поліграфних досліджень у Ірини Ширієвської — від 2 200 до 4 500 грн залежно від виду дослідження. Перевірка персоналу від 2 200 грн, ТОП-менеджери та службові розслідування 4 000 грн, запити подружньої вірності 4 500 грн." },
       },
       {
         "@type": "Question",
