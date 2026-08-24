@@ -11,6 +11,8 @@ export function proxy(request: NextRequest) {
   if (
     pathname.startsWith("/_next") ||
     pathname.startsWith("/api") ||
+    pathname === "/admin" ||
+    pathname.startsWith("/admin/") ||
     pathname.startsWith("/images") ||
     /\.\w+$/.test(pathname) // files with extensions (jpg, svg, txt, xml…)
   ) {

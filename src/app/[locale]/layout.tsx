@@ -5,6 +5,7 @@ import StickyCallBar from "@/components/StickyCallBar";
 import HtmlLang from "@/components/HtmlLang";
 import type { Lang } from "@/lib/translations";
 import { SITE_URL } from "@/lib/seo";
+import { getSiteTranslations } from "@/sanity/lib/content";
 
 const LOCALES = ["uk", "ru"];
 
@@ -27,8 +28,9 @@ export default async function LocaleLayout({ children, params }: Props) {
   const { locale } = await params;
   if (!LOCALES.includes(locale)) notFound();
   const lang = (locale === "ru" ? "ru" : "ua") as Lang;
+  const initialTranslations = await getSiteTranslations(lang);
   return (
-    <Providers initialLang={lang}>
+    <Providers initialLang={lang} initialTranslations={initialTranslations}>
       <HtmlLang lang={locale} />
       {children}
       <StickyCallBar />

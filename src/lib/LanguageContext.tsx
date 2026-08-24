@@ -16,12 +16,19 @@ const LanguageContext = createContext<LanguageCtx>({
 export function LanguageProvider({
   children,
   initialLang,
+  initialTranslations,
 }: {
   children: React.ReactNode;
   initialLang: Lang;
+  initialTranslations?: T;
 }) {
   return (
-    <LanguageContext.Provider value={{ lang: initialLang, t: translations[initialLang] }}>
+    <LanguageContext.Provider
+      value={{
+        lang: initialLang,
+        t: initialTranslations || (translations[initialLang] as T),
+      }}
+    >
       {children}
     </LanguageContext.Provider>
   );

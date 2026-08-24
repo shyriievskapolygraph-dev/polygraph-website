@@ -5,12 +5,17 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "sanity:seed": "sanity exec scripts/seed-sanity.ts --with-user-token"
   },
   "dependencies": {
+    "@sanity/image-url": "^2.1.1",
     "next": "16.2.2",
+    "next-sanity": "^13.3.3",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "sanity": "^6.10.1",
+    "styled-components": "^6.5.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
